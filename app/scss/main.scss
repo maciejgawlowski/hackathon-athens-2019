@@ -6,6 +6,24 @@ body {
 	color: #fff;
 }
 
+//map
+.mapbox {
+	position: relative;
+}
+
+.mapbox .overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 314159;
+	pointer-events: none;
+}
+
+.mapbox .overlay .btn {
+	pointer-events: initial;
+}
+
+//table
 #table-header{
 	display: grid;
 	grid-template-columns: 15% 15% 15% 20% auto 5%;
