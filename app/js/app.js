@@ -63,12 +63,14 @@ var linesFeatureLayer = L.geoJSON(myLines, {
 });
 
 // load a tile layer
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.{ext}',
     {
         attribution: 'Tiles by <a href="http://mapc.org">MAPC</a>, Data by <a href="http://mass.gov/mgis">MassGIS</a>',
         zoom: 15,
-        maxZoom: 17,
-        minZoom: 9
+        subdomains: 'abcd',
+        minZoom: 0,
+        maxZoom: 20,
+        ext: 'png'
     }
 ).addTo(map);
 
