@@ -1,7 +1,7 @@
 // initialize the map
 var map = L.map('map').setView([50.10593723843759, 8.660144805908203], 13);
 
-var busLine = [{
+var carLine = [{
     "type": "LineString",
     "coordinates": [
         [
@@ -52,14 +52,14 @@ var busLine = [{
 }];
 
 //end GeoJSON file
-var busLineStyle = {
+var carLineStyle = {
     "color": "red",
     "weight": 5,
     "opacity": 0.65
 };
 // uncomment the style line to see style working.
-var busLineFeatureLayer = L.geoJSON(busLine, {
-    style: busLineStyle
+var carLineFeatureLayer = L.geoJSON(carLine, {
+    style: carLineStyle
 });
 
 // load a tile layer
@@ -74,7 +74,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     }
 ).addTo(map);
 
-busLineFeatureLayer.addTo(map);
+carLineFeatureLayer.addTo(map);
 
 $(document).ready(function () {
 
