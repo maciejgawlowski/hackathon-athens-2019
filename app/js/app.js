@@ -174,6 +174,107 @@ var carLine = [{
     ]
 }];
 
+var bikeLine = [
+    {
+        "type": "FeatureCollection",
+        "features": [
+            {
+                "type": "Feature",
+                "properties": {},
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [
+                            8.663063049316406,
+                            50.10312964491842
+                        ],
+                        [
+                            8.658256530761719,
+                            50.100982550598395
+                        ],
+                        [
+                            8.650188446044922,
+                            50.09844995667801
+                        ],
+                        [
+                            8.640575408935547,
+                            50.09542167951057
+                        ],
+                        [
+                            8.634910583496092,
+                            50.092723598629846
+                        ],
+                        [
+                            8.631391525268555,
+                            50.091457100110425
+                        ],
+                        [
+                            8.619203567504883,
+                            50.090631104781586
+                        ],
+                        [
+                            8.617315292358398,
+                            50.09085137159468
+                        ],
+                        [
+                            8.618345260620115,
+                            50.08336173197496
+                        ],
+                        [
+                            8.617057800292969,
+                            50.078129304092016
+                        ],
+                        [
+                            8.613882064819336,
+                            50.07223525407118
+                        ],
+                        [
+                            8.609418869018555,
+                            50.06336527146654
+                        ],
+                        [
+                            8.604011535644531,
+                            50.05306081007687
+                        ],
+                        [
+                            8.588390350341797,
+                            50.0536119068041
+                        ],
+                        [
+                            8.583412170410156,
+                            50.0539425618025
+                        ],
+                        [
+                            8.578691482543945,
+                            50.053887452794314
+                        ],
+                        [
+                            8.575172424316406,
+                            50.05306081007687
+                        ],
+                        [
+                            8.566503524780273,
+                            50.051683040568975
+                        ],
+                        [
+                            8.564014434814453,
+                            50.05002966494399
+                        ],
+                        [
+                            8.561868667602537,
+                            50.049533641148784
+                        ],
+                        [
+                            8.554143905639648,
+                            50.04799042322258
+                        ]
+                    ]
+                }
+            }
+        ]
+    }
+];
+
 //end GeoJSON file
 var carLineStyle = {
     "color": "red",
@@ -186,6 +287,12 @@ var trainLineStyle = {
     "weight": 5,
     "opacity": 0.65
 };
+
+var bikeLineStyle = {
+    "color": "yellow",
+    "weight": 5,
+    "opacity": 0.65
+};
 // uncomment the style line to see style working.
 var carLineFeatureLayer = L.geoJSON(carLine, {
     style: carLineStyle
@@ -193,6 +300,10 @@ var carLineFeatureLayer = L.geoJSON(carLine, {
 
 var trainLineFeatureLayer = L.geoJSON(trainLine, {
     style: trainLineStyle
+});
+
+var bikeLineFeatureLayer = L.geoJSON(bikeLine, {
+    style: bikeLineStyle
 });
 
 // load a tile layer
@@ -209,6 +320,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
 
 carLineFeatureLayer.addTo(map);
 trainLineFeatureLayer.addTo(map);
+bikeLineFeatureLayer.addTo(map);
 
 $(document).ready(function () {
 
