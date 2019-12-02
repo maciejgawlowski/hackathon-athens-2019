@@ -5,3 +5,25 @@ body {
 	background: $darkBlue;
 	color: #fff;
 }
+
+#table-header{
+	display: grid;
+	grid-template-columns: 15% 15% 15% 20% auto 5%;
+	grid-template-rows: 25px;
+	grid-column-gap: 5px;
+	margin-bottom: 10px;
+}
+
+.table-row{
+	display: grid;
+	grid-template-columns: 15% 15% 15% 20% auto 5%;
+	grid-template-rows: 25px;
+	grid-column-gap: 5px;
+	margin-bottom: 10px;
+}
+
+
+.table-cell {
+	text-align: center;
+	border: solid 1px white;
+}
