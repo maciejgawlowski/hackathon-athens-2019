@@ -86,7 +86,10 @@ $(document).ready(function () {
 $(".table-row").click(function () {
     if ($(this).find('.table-row-details').is(":hidden")) {
         $(this).find('.table-row-details').slideDown("slow");
+        $(this).find('.table-row-details').css("display", "grid");
+        $(this).find('#table-cell-6').text("<");
     } else {
-        $(this).find('.table-row-details').hide();
+        $(this).find('.table-row-details').slideUp("slow");
+        $(this).find('#table-cell-6').text(">");
     }
 });
