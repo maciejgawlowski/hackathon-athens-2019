@@ -5,3 +5,19 @@ body {
 	background: $darkBlue;
 	color: #fff;
 }
+
+.mapbox {
+	position: relative;
+}
+
+.mapbox .overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 314159;
+	pointer-events: none;
+}
+
+.mapbox .overlay .btn {
+	pointer-events: initial;
+}
