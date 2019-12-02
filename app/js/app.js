@@ -1,7 +1,7 @@
 // initialize the map
 var map = L.map('map').setView([50.10593723843759, 8.660144805908203], 13);
 
-var myLines = [{
+var busLine = [{
     "type": "LineString",
     "coordinates": [
         [
@@ -52,14 +52,14 @@ var myLines = [{
 }];
 
 //end GeoJSON file
-var myStyle = {
+var busLineStyle = {
     "color": "red",
     "weight": 5,
     "opacity": 0.65
 };
 // uncomment the style line to see style working.
-var linesFeatureLayer = L.geoJSON(myLines, {
-    style: myStyle
+var busLineFeatureLayer = L.geoJSON(busLine, {
+    style: busLineStyle
 });
 
 // load a tile layer
@@ -74,7 +74,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     }
 ).addTo(map);
 
-linesFeatureLayer.addTo(map);
+busLineFeatureLayer.addTo(map);
 
 $(document).ready(function () {
 
@@ -87,6 +87,6 @@ $(".table-row").click(function () {
     if ($(this).find('.table-row-details').is(":hidden")) {
         $(this).find('.table-row-details').slideDown("slow");
     } else {
-        $(this).find('.table-row-details').hide();
+        $(this).find('.table-row-details').slideUp("slow");
     }
 });
