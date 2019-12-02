@@ -22,7 +22,7 @@ gulp.task('assets', function() {
 
 gulp.task('scripts', function() {
   return gulp
-    .src('app/js/app.js')
+    .src('app/js/*')
 		.pipe( plumber( errorHandler ) )
     .pipe(
       babel({
