@@ -1,4 +1,10 @@
-// initialize the map
+var TRANSPORT_TYPE = {
+    TRAIN: "train",
+    CAR: "car",
+    ECAR: "electric-car",
+    BUS: "bus"
+};
+
 var map = L.map('map').setView([50.10593723843759, 8.660144805908203], 13);
 
 var trainLine = [{
@@ -307,7 +313,7 @@ var trainLineStyle = {
 };
 
 var busLineStyle = {
-    "color": "yellow",
+    "color": "blue",
     "weight": 5,
     "opacity": 0.65
 };
@@ -336,28 +342,66 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     }
 ).addTo(map);
 
-carLineFeatureLayer.addTo(map);
-trainLineFeatureLayer.addTo(map);
-busLineFeatureLayer.addTo(map);
+// carLineFeatureLayer.addTo(map);
+// trainLineFeatureLayer.addTo(map);
+// busLineFeatureLayer.addTo(map);
 
 $(document).ready(function () {
-
     console.log('whatever');
+});
 
+$("#test-btn").click(function () {
+    console.info("test btn click");
+
+    map.removeLayer(carLineFeatureLayer);
 });
 
 //show or hide table row details
 $(".table-row").click(function () {
+    var transportType = $(this).data("transport-type");
     if ($(this).find('.table-row-details').is(":hidden")) {
         $('.table-row').not(this).each(function () {
             hideDetails.call(this);
         });
         $(this).find('.table-row-details').slideDown("slow");
         $(this).find('.table-row-details').css("display", "grid");
+        showLayer($(this), transportType);
     } else {
         hideDetails.call(this);
+        hideAllLayer();
     }
 });
+
+function hideAllLayer() {
+    map.removeLayer(busLineFeatureLayer);
+    map.removeLayer(carLineFeatureLayer);
+    map.removeLayer(carLineFeatureLayer);
+    map.removeLayer(trainLineFeatureLayer);
+}
+
+function showLayer(element, transportType) {
+    console.info("showL " + transportType);
+    switch (transportType) {
+        case TRANSPORT_TYPE.BUS:
+            console.info("BUS");
+            map.addLayer(busLineFeatureLayer);
+            break;
+        case TRANSPORT_TYPE.CAR:
+            console.info("CAR");
+            map.addLayer(carLineFeatureLayer);
+            break;
+        case TRANSPORT_TYPE.ECAR:
+            console.info("ECAR");
+            map.addLayer(carLineFeatureLayer);
+            break;
+        case TRANSPORT_TYPE.TRAIN:
+            console.info("TRAIN");
+            map.addLayer(trainLineFeatureLayer);
+            break;
+        default:
+            console.info("todo")
+    }
+}
 
 function hideDetails() {
     $(this).find('.table-row-details').slideUp("slow");
