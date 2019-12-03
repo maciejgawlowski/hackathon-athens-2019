@@ -341,7 +341,7 @@ $(".table-row").click(function () {
 });
 
 $(function () {
-    var availableTags = [
+    var startPointsTAG = [
         "Frankfurt Berliner Straße (Frankfurt am Main)",
         "Frankfurt Börsenstraße",
         "Frankfurt Freßgass",
@@ -355,7 +355,16 @@ $(function () {
         "Frankfurt Schaumainkai",
         "Frankfurt Zeil"
     ];
-    $("#tags").autocomplete({
-        source: availableTags
+
+    var endPointTAG = [
+        "Frankfurt Airport Main",
+        "Frankfurt Airport East"
+    ];
+
+    $("#end-point-input").autocomplete({
+        source: startPointsTAG
+    });
+    $("#start-point-input").autocomplete({
+        source: endPointTAG
     });
 });
