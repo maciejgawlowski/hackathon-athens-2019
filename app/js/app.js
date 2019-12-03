@@ -5,7 +5,8 @@ var TRANSPORT_TYPE = {
     BUS: "bus"
 };
 
-var map = L.map('map').setView([50.10593723843759, 8.660144805908203], 13);
+var map = L.map('map').setView([50.08, 8.64], 11);
+
 
 var trainLine = [{
     "type": "FeatureCollection",
