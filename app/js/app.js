@@ -336,7 +336,6 @@ $(".table-row").click(function () {
         });
         $(this).find('.table-row-details').slideDown("slow");
         $(this).find('.table-row-details').css("display", "grid");
-        $(this).find('#table-cell-6').text("<");
     } else {
         hideDetails.call(this);
     }
@@ -344,7 +343,6 @@ $(".table-row").click(function () {
 
 function hideDetails() {
     $(this).find('.table-row-details').slideUp("slow");
-    $(this).find('#table-cell-6').text(">");
 }
 
 $(function () {
