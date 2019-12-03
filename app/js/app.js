@@ -339,3 +339,23 @@ $(".table-row").click(function () {
         $(this).find('#table-cell-6').text(">");
     }
 });
+
+$(function () {
+    var availableTags = [
+        "Frankfurt Berliner Straße (Frankfurt am Main)",
+        "Frankfurt Börsenstraße",
+        "Frankfurt Freßgass",
+        "Frankfurt Goethestraße",
+        "Frankfurt Hauptwache (Frankfurt am Main)",
+        "Frankfurt Hochstraße (Frankfurt)",
+        "Frankfurt Kaiserhofstraße",
+        "Frankfurt Konstablerwache",
+        "Frankfurt Mainzer Landstraße",
+        "Frankfurt Saalgasse",
+        "Frankfurt Schaumainkai",
+        "Frankfurt Zeil"
+    ];
+    $("#tags").autocomplete({
+        source: availableTags
+    });
+});
