@@ -396,6 +396,18 @@ L.geoJSON([startPoint, destPoint], {
     }
 }).addTo(map);
 
+var LeafIcon = L.Icon.extend({
+    options: {
+        shadowUrl: 'assets/icon/marker-icon-green.png',
+        iconAnchor: [12, 40]
+    }
+});
+
+var orangeIcon = new LeafIcon({iconUrl: 'leaf-orange.png'});
+
+
+L.marker([50.051200811895846, 8.571664094924927], {icon: orangeIcon}).addTo(map);
+
 $(document).ready(function () {
     console.log('whatever');
 });
