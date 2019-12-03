@@ -471,7 +471,8 @@ $(function () {
         "Frankfurt Mainzer Landstraße",
         "Frankfurt Saalgasse",
         "Frankfurt Schaumainkai",
-        "Frankfurt Zeil"
+        "Frankfurt Zeil",
+        "Vilbele Strasse 2"
     ];
 
     var endPointTAG = [
@@ -480,9 +481,9 @@ $(function () {
     ];
 
     $("#end-point-input").autocomplete({
-        source: startPointsTAG
+        source: endPointTAG
     });
     $("#start-point-input").autocomplete({
-        source: endPointTAG
+        source: startPointsTAG
     });
 });
