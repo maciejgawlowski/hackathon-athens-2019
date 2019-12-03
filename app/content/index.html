@@ -1,266 +1,241 @@
 <div id="main-container">
-    <h2>Where you start the journey?</h2>
+    <h3>Where you start the journey?</h3>
     <div>
-        <fieldset>
-            <legend>Your journey</legend>
-            <form>
-                <!--        Start point<br>-->
-                <div class="point-container">
-                    <img class="point-icon" src="/assets/icon/start-point.png" alt=""/>
-                    <input id="start-point-input" type="text" name="startpoint" placeholder="Choose starting point">
-                </div>
-                <br>
-                <!--        End point<br>-->
-                <div class="point-container" style="margin-top: -15px">
-                    <img class="point-icon" src="/assets/icon/airport.png" alt=""/>
-                    <input id="end-point-input" type="text" name="endpoint" value="Frankfurt Airport" disabled>
-                </div>
-                <!--                <br><br>-->
-                <!--                <input type="submit" value="Submit">-->
-            </form>
-        </fieldset>
+        <form id="point-form">
+            <div class="point-container">
+                <img class="point-icon" src="/assets/icon/start-point.png" alt=""/>
+                <input id="start-point-input" type="text" name="startpoint" placeholder="Choose starting point">
+            </div>
+            <br>
+            <div class="point-container" style="margin-top: -15px">
+                <img class="point-icon" src="/assets/icon/airport.png" alt=""/>
+                <input id="end-point-input" type="text" name="endpoint" value="Frankfurt Airport" disabled>
+            </div>
+        </form>
     </div>
     <div>
-        <fieldset>
-            <legend>Trip Info</legend>
-            <form>
-                <div id="arrival-time">
-                    <div>
-                        <label for="arrival-time-input">Arrival time</label>
+        <form id="info-form">
+            <div id="airport-arrival-time" class="time-container">
+                <div id="airport-arrival-time-container">
+                    <button id="minus-button">-</button>
+                    <div id="airport-arrival-time-input">12:00</div>
+                    <button id="plus-button">+</button>
+                </div>
+            </div>
+            <div id="checkin-time" class="time-container">
+                <div id="checkin-time-input">12:00</div>
+            </div>
+            <div id="boarding-time" class="time-container">
+                <div id="boarding-time-input">12:00</div>
+            </div>
+            <div id="departure-time" class="time-container">
+                <div id="departure-time-input">12:00</div>
+            </div>
+            <div><label for="airport-arrival-time-input">Arrive at the airport</label></div>
+            <div><label for="checkin-time-input">Check-in close</label></div>
+            <div><label for="boarding-time-input">Boarding gate close</label></div>
+            <div><label for="departure-time-input">Departure time</label></div>
+        </form>
+        <div>
+
+        </div>
+        <div id='map' style="height: 300px"></div>
+        <div id="table">
+            <div id="table-header">
+                <div class="table-cell"></div>
+                <div class="table-cell">CO<sub>2</sub></div>
+                <div class="table-cell">Price</div>
+                <div class="table-cell">Start</div>
+                <div class="table-cell"></div>
+                <div class="table-cell"></div>
+            </div>
+
+            <div class="table-row">
+                <div class="table-cell table-cell-1">
+                    <img class="table-cell-icon" src="/assets/icon/train.png" alt=""/>
+                </div>
+                <div class="table-cell table-cell-2">500 g</div>
+                <div class="table-cell table-cell-3">incl.</div>
+                <div class="table-cell table-cell-4">13:30</div>
+                <div class="table-cell table-cell-5">Choose</div>
+                <div class="table-cell table-cell-6">
+                    <img class="table-cell-icon" src="/assets/icon/more.png" alt=""/>
+                </div>
+                <div class="table-row-details table-cell-7">
+                    <div class="table-row-details-1">
+                        <div class="table-details-cell center">
+                            <img class="table-cell-icon" src="/assets/icon/walk.png" alt=""/>
+                            250 m
+                        </div>
+                        <div class="table-details-cell center">
+                            <img class="table-cell-icon" src="/assets/icon/separator.png" alt=""/>
+                        </div>
+                        <div class="table-details-cell center">
+                            <img class="table-cell-icon" src="/assets/icon/train.png" alt=""/>
+                            12 km
+                        </div>
+                        <div class="table-details-cell center">
+                            <img class="table-cell-icon" src="/assets/icon/separator.png" alt=""/>
+                        </div>
+                        <div class="table-details-cell center">
+                            <img class="table-cell-icon" src="/assets/icon/walk.png" alt=""/>
+                            50 m
+                        </div>
                     </div>
-                    <div>
-                        <button id="minus-button">-</button>
-                        <input id="arrival-time-input" type="text" name="arrival-time-input" placeholder="12:00">
-                        <button id="plus-button">+</button>
+                    <div class="table-row-details-2">
+                        <div class="table-details-cell">13:14 from Beethoven Strasse bus stop</div>
+                    </div>
+                    <div class="table-row-details-3">
+                        <div class="table-details-cell">CO<sub>2</sub> emissions:</div>
+                        <div class="table-details-cell">500 g</div>
+                    </div>
+                    <div class="table-row-details-4">
+                        <div class="table-details-cell">PM emissions:</div>
+                        <div class="table-details-cell">500 g</div>
+                    </div>
+                    <div class="table-row-details-5">
+                        <div class="table-details-cell">NO<sub>x</sub> emissions:</div>
+                        <div class="table-details-cell">500 g</div>
+                    </div>
+                    <div class="table-row-details-6">
+                        <div class="table-details-cell">Note: ticket is included in your boarding pass</div>
                     </div>
                 </div>
-                <div id="checkin-time">
-                    <div>
-                        <label for="checkin-time-input">Checkin close time</label>
+            </div>
+
+            <div class="table-row">
+                <div class="table-cell table-cell-1">
+                    <img class="table-cell-icon" src="/assets/icon/bus.png" alt=""/>
+                </div>
+                <div class="table-cell table-cell-2">500 g</div>
+                <div class="table-cell table-cell-3">incl.</div>
+                <div class="table-cell table-cell-4">13:10</div>
+                <div class="table-cell table-cell-5">Choose</div>
+                <div class="table-cell table-cell-6">
+                    <img class="table-cell-icon" src="/assets/icon/more.png" alt=""/>
+                </div>
+                <div class="table-row-details table-cell-7">
+                    <div class="table-row-details-1">
+                        <div class="table-details-cell center">
+                            <img class="table-cell-icon" src="/assets/icon/walk.png" alt=""/>
+                            250 m
+                        </div>
+                        <div class="table-details-cell center">
+                            <img class="table-cell-icon" src="/assets/icon/separator.png" alt=""/>
+                        </div>
+                        <div class="table-details-cell center">
+                            <img class="table-cell-icon" src="/assets/icon/bus.png" alt=""/>
+                            12 km
+                        </div>
+                        <div class="table-details-cell center">
+                            <img class="table-cell-icon" src="/assets/icon/separator.png" alt=""/>
+                        </div>
+                        <div class="table-details-cell center">
+                            <img class="table-cell-icon" src="/assets/icon/walk.png" alt=""/>
+                            50 m
+                        </div>
                     </div>
-                    <div>
-                        <span id="checkin-time-input">12:00</span>
+                    <div class="table-row-details-2">
+                        <div class="table-details-cell">13:14 from Beethoven Strasse bus stop</div>
+                    </div>
+                    <div class="table-row-details-3">
+                        <div class="table-details-cell">CO<sub>2</sub> emissions:</div>
+                        <div class="table-details-cell">500 g</div>
+                    </div>
+                    <div class="table-row-details-4">
+                        <div class="table-details-cell">PM emissions:</div>
+                        <div class="table-details-cell">500 g</div>
+                    </div>
+                    <div class="table-row-details-5">
+                        <div class="table-details-cell">NO<sub>x</sub> emissions:</div>
+                        <div class="table-details-cell">500 g</div>
+                    </div>
+                    <div class="table-row-details-6">
+                        <div class="table-details-cell">Note: ticket is included in your boarding pass</div>
                     </div>
                 </div>
-                <div id="boarding-time">
-                    <div>
-                        <label for="boarding-time-input">Boarding time</label>
+            </div>
+
+            <div class="table-row">
+                <div class="table-cell table-cell-1">
+                    <img class="table-cell-icon" src="/assets/icon/electric-car.png" alt=""/>
+                </div>
+                <div class="table-cell table-cell-2">0 g</div>
+                <div class="table-cell table-cell-3">~10e</div>
+                <div class="table-cell table-cell-4">13:10</div>
+                <div class="table-cell table-cell-5">Choose</div>
+                <div class="table-cell table-cell-6">
+                    <img class="table-cell-icon" src="/assets/icon/more.png" alt=""/>
+                </div>
+                <div class="table-row-details table-cell-7">
+                    <div class="table-row-details-1">
+                        <div class="table-details-cell center">
+                            <img class="table-cell-icon" src="/assets/icon/walk.png" alt=""/>
+                            250 m
+                        </div>
+                        <div class="table-details-cell center">
+                            <img class="table-cell-icon" src="/assets/icon/separator.png" alt=""/>
+                        </div>
+                        <div class="table-details-cell center">
+                            <img class="table-cell-icon" src="/assets/icon/electric-car.png" alt=""/>
+                            12 km
+                        </div>
+                        <div class="table-details-cell center">
+                            <img class="table-cell-icon" src="/assets/icon/separator.png" alt=""/>
+                        </div>
+                        <div class="table-details-cell center">
+                            <img class="table-cell-icon" src="/assets/icon/walk.png" alt=""/>
+                            50 m
+                        </div>
                     </div>
-                    <div>
-                        <span id="boarding-time-input">12:00</span>
+                    <div class="table-row-details-2">
+                        <div class="table-details-cell">Fastest route, heavier traffic than usual</div>
+                    </div>
+                    <div class="table-row-details-3">
+                        <div class="table-details-cell">CO<sub>2</sub> emissions:</div>
+                        <div class="table-details-cell">0 g</div>
+                    </div>
+                    <div class="table-row-details-4">
+                        <div class="table-details-cell">PM emissions:</div>
+                        <div class="table-details-cell">0 g</div>
+                    </div>
+                    <div class="table-row-details-5">
+                        <div class="table-details-cell">NO<sub>x</sub> emissions:</div>
+                        <div class="table-details-cell">0 g</div>
                     </div>
                 </div>
-                <div id="departure-time">
-                    <div>
-                        <label for="departure-time-input">Departure time</label>
+            </div>
+
+            <div class="table-row">
+                <div class="table-cell table-cell-1">
+                    <img class="table-cell-icon" src="/assets/icon/car.png" alt=""/>
+                </div>
+                <div class="table-cell table-cell-2">500 g</div>
+                <div class="table-cell table-cell-3">10 e</div>
+                <div class="table-cell table-cell-4">13:30</div>
+                <div class="table-cell table-cell-5">Choose</div>
+                <div class="table-cell table-cell-6">
+                    <img class="table-cell-icon" src="/assets/icon/more.png" alt=""/>
+                </div>
+                <div class="table-row-details table-cell-7">
+                    <div class="table-row-details-2">
+                        <div class="table-details-cell">Fastest route, heavier traffic than usual</div>
                     </div>
-                    <div>
-                        <span id="departure-time-input">12:00</span>
+                    <div class="table-row-details-3">
+                        <div class="table-details-cell">CO<sub>2</sub> emissions:</div>
+                        <div class="table-details-cell">500 g</div>
+                    </div>
+                    <div class="table-row-details-4">
+                        <div class="table-details-cell">PM emissions:</div>
+                        <div class="table-details-cell">500 g</div>
+                    </div>
+                    <div class="table-row-details-5">
+                        <div class="table-details-cell">NO<sub>x</sub> emissions:</div>
+                        <div class="table-details-cell">500 g</div>
                     </div>
                 </div>
-            </form>
-        </fieldset>
+            </div>
+
+
+        </div>
     </div>
-    <div>
-
-    </div>
-    <div id='map' style="height: 300px"></div>
-    <div id="table">
-        <div id="table-header">
-            <div class="table-cell"></div>
-            <div class="table-cell">CO<sub>2</sub></div>
-            <div class="table-cell">Price</div>
-            <div class="table-cell">Start</div>
-            <div class="table-cell"></div>
-            <div class="table-cell"></div>
-        </div>
-
-        <div class="table-row">
-            <div class="table-cell table-cell-1">
-                <img class="table-cell-icon" src="/assets/icon/train.png" alt=""/>
-            </div>
-            <div class="table-cell table-cell-2">500 g</div>
-            <div class="table-cell table-cell-3">incl.</div>
-            <div class="table-cell table-cell-4">13:30</div>
-            <div class="table-cell table-cell-5">Choose</div>
-            <div class="table-cell table-cell-6">
-                <img class="table-cell-icon" src="/assets/icon/more.png" alt=""/>
-            </div>
-            <div class="table-row-details table-cell-7">
-                <div class="table-row-details-1">
-                    <div class="table-details-cell center">
-                        <img class="table-cell-icon" src="/assets/icon/walk.png" alt=""/>
-                        250 m
-                    </div>
-                    <div class="table-details-cell center">
-                        <img class="table-cell-icon" src="/assets/icon/separator.png" alt=""/>
-                    </div>
-                    <div class="table-details-cell center">
-                        <img class="table-cell-icon" src="/assets/icon/train.png" alt=""/>
-                        12 km
-                    </div>
-                    <div class="table-details-cell center">
-                        <img class="table-cell-icon" src="/assets/icon/separator.png" alt=""/>
-                    </div>
-                    <div class="table-details-cell center">
-                        <img class="table-cell-icon" src="/assets/icon/walk.png" alt=""/>
-                        50 m
-                    </div>
-                </div>
-                <div class="table-row-details-2">
-                    <div class="table-details-cell">13:14 from Beethoven Strasse bus stop</div>
-                </div>
-                <div class="table-row-details-3">
-                    <div class="table-details-cell">CO<sub>2</sub> emissions:</div>
-                    <div class="table-details-cell">500 g</div>
-                </div>
-                <div class="table-row-details-4">
-                    <div class="table-details-cell">PM emissions:</div>
-                    <div class="table-details-cell">500 g</div>
-                </div>
-                <div class="table-row-details-5">
-                    <div class="table-details-cell">NO<sub>x</sub> emissions:</div>
-                    <div class="table-details-cell">500 g</div>
-                </div>
-                <div class="table-row-details-6">
-                    <div class="table-details-cell">Note: ticket is included in your boarding pass</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="table-row">
-            <div class="table-cell table-cell-1">
-                <img class="table-cell-icon" src="/assets/icon/bus.png" alt=""/>
-            </div>
-            <div class="table-cell table-cell-2">500 g</div>
-            <div class="table-cell table-cell-3">incl.</div>
-            <div class="table-cell table-cell-4">13:10</div>
-            <div class="table-cell table-cell-5">Choose</div>
-            <div class="table-cell table-cell-6">
-                <img class="table-cell-icon" src="/assets/icon/more.png" alt=""/>
-            </div>
-            <div class="table-row-details table-cell-7">
-                <div class="table-row-details-1">
-                    <div class="table-details-cell center">
-                        <img class="table-cell-icon" src="/assets/icon/walk.png" alt=""/>
-                        250 m
-                    </div>
-                    <div class="table-details-cell center">
-                        <img class="table-cell-icon" src="/assets/icon/separator.png" alt=""/>
-                    </div>
-                    <div class="table-details-cell center">
-                        <img class="table-cell-icon" src="/assets/icon/bus.png" alt=""/>
-                        12 km
-                    </div>
-                    <div class="table-details-cell center">
-                        <img class="table-cell-icon" src="/assets/icon/separator.png" alt=""/>
-                    </div>
-                    <div class="table-details-cell center">
-                        <img class="table-cell-icon" src="/assets/icon/walk.png" alt=""/>
-                        50 m
-                    </div>
-                </div>
-                <div class="table-row-details-2">
-                    <div class="table-details-cell">13:14 from Beethoven Strasse bus stop</div>
-                </div>
-                <div class="table-row-details-3">
-                    <div class="table-details-cell">CO<sub>2</sub> emissions:</div>
-                    <div class="table-details-cell">500 g</div>
-                </div>
-                <div class="table-row-details-4">
-                    <div class="table-details-cell">PM emissions:</div>
-                    <div class="table-details-cell">500 g</div>
-                </div>
-                <div class="table-row-details-5">
-                    <div class="table-details-cell">NO<sub>x</sub> emissions:</div>
-                    <div class="table-details-cell">500 g</div>
-                </div>
-                <div class="table-row-details-6">
-                    <div class="table-details-cell">Note: ticket is included in your boarding pass</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="table-row">
-            <div class="table-cell table-cell-1">
-                <img class="table-cell-icon" src="/assets/icon/electric-car.png" alt=""/>
-            </div>
-            <div class="table-cell table-cell-2">0 g</div>
-            <div class="table-cell table-cell-3">~10e</div>
-            <div class="table-cell table-cell-4">13:10</div>
-            <div class="table-cell table-cell-5">Choose</div>
-            <div class="table-cell table-cell-6">
-                <img class="table-cell-icon" src="/assets/icon/more.png" alt=""/>
-            </div>
-            <div class="table-row-details table-cell-7">
-                <div class="table-row-details-1">
-                    <div class="table-details-cell center">
-                        <img class="table-cell-icon" src="/assets/icon/walk.png" alt=""/>
-                        250 m
-                    </div>
-                    <div class="table-details-cell center">
-                        <img class="table-cell-icon" src="/assets/icon/separator.png" alt=""/>
-                    </div>
-                    <div class="table-details-cell center">
-                        <img class="table-cell-icon" src="/assets/icon/electric-car.png" alt=""/>
-                        12 km
-                    </div>
-                    <div class="table-details-cell center">
-                        <img class="table-cell-icon" src="/assets/icon/separator.png" alt=""/>
-                    </div>
-                    <div class="table-details-cell center">
-                        <img class="table-cell-icon" src="/assets/icon/walk.png" alt=""/>
-                        50 m
-                    </div>
-                </div>
-                <div class="table-row-details-2">
-                    <div class="table-details-cell">Fastest route, heavier traffic than usual</div>
-                </div>
-                <div class="table-row-details-3">
-                    <div class="table-details-cell">CO<sub>2</sub> emissions:</div>
-                    <div class="table-details-cell">0 g</div>
-                </div>
-                <div class="table-row-details-4">
-                    <div class="table-details-cell">PM emissions:</div>
-                    <div class="table-details-cell">0 g</div>
-                </div>
-                <div class="table-row-details-5">
-                    <div class="table-details-cell">NO<sub>x</sub> emissions:</div>
-                    <div class="table-details-cell">0 g</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="table-row">
-            <div class="table-cell table-cell-1">
-                <img class="table-cell-icon" src="/assets/icon/car.png" alt=""/>
-            </div>
-            <div class="table-cell table-cell-2">500 g</div>
-            <div class="table-cell table-cell-3">10 e</div>
-            <div class="table-cell table-cell-4">13:30</div>
-            <div class="table-cell table-cell-5">Choose</div>
-            <div class="table-cell table-cell-6">
-                <img class="table-cell-icon" src="/assets/icon/more.png" alt=""/>
-            </div>
-            <div class="table-row-details table-cell-7">
-                <div class="table-row-details-2">
-                    <div class="table-details-cell">Fastest route, heavier traffic than usual</div>
-                </div>
-                <div class="table-row-details-3">
-                    <div class="table-details-cell">CO<sub>2</sub> emissions:</div>
-                    <div class="table-details-cell">500 g</div>
-                </div>
-                <div class="table-row-details-4">
-                    <div class="table-details-cell">PM emissions:</div>
-                    <div class="table-details-cell">500 g</div>
-                </div>
-                <div class="table-row-details-5">
-                    <div class="table-details-cell">NO<sub>x</sub> emissions:</div>
-                    <div class="table-details-cell">500 g</div>
-                </div>
-            </div>
-        </div>
-
-
-    </div>
-</div>
