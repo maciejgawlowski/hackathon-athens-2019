@@ -408,6 +408,7 @@ $("#test-btn").click(function () {
 //show or hide table row details
 $(".table-row").click(function () {
     var transportType = $(this).data("transport-type");
+    hideAllLayer();
     if ($(this).find('.table-row-details').is(":hidden")) {
         $('.table-row').not(this).each(function () {
             hideDetails.call(this);
