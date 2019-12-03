@@ -342,9 +342,58 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     }
 ).addTo(map);
 
-// carLineFeatureLayer.addTo(map);
-// trainLineFeatureLayer.addTo(map);
-// busLineFeatureLayer.addTo(map);
+
+var destPoint = {
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.571664094924927,
+                    50.051200811895846
+                ]
+            }
+        }
+    ]
+};
+
+var startPoint = {
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    8.687750101089478,
+                    50.11760453566317]
+            }
+        }
+    ]
+};
+
+L.geoJSON([startPoint, destPoint], {
+    style: function (feature) {
+        return feature.properties && feature.properties.style;
+    },
+
+    // onEachFeature: onEachFeature,
+
+    pointToLayer: function (feature, latlng) {
+        return L.circleMarker(latlng, {
+            radius: 8,
+            fillColor: "#ff7800",
+            color: "#000",
+            weight: 1,
+            opacity: 1,
+            fillOpacity: 0.8
+        });
+    }
+}).addTo(map);
 
 $(document).ready(function () {
     console.log('whatever');
