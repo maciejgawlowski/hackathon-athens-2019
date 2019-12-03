@@ -1,13 +1,20 @@
 <div id="main-container">
+    <h2>Where you start the journey?</h2>
     <div>
         <fieldset>
-            <legend>Your ride</legend>
+            <legend>Your journey</legend>
             <form>
                 <!--        Start point<br>-->
-                <input id="start-point-input" type="text" name="startpoint" placeholder="start point">
+                <div class="point-container">
+                    <img class="point-icon" src="/assets/icon/start-point.png" alt=""/>
+                    <input id="start-point-input" type="text" name="startpoint" placeholder="Choose starting point">
+                </div>
                 <br>
                 <!--        End point<br>-->
-                <input id="end-point-input" type="text" name="endpoint" placeholder="airport">
+                <div class="point-container" style="margin-top: -15px">
+                    <img class="point-icon" src="/assets/icon/airport.png" alt=""/>
+                    <input id="end-point-input" type="text" name="endpoint" value="Frankfurt Airport" disabled>
+                </div>
                 <!--                <br><br>-->
                 <!--                <input type="submit" value="Submit">-->
             </form>
