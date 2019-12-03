@@ -377,24 +377,26 @@ var startPoint = {
     ]
 };
 
-L.geoJSON([startPoint, destPoint], {
-    style: function (feature) {
-        return feature.properties && feature.properties.style;
-    },
-
-    // onEachFeature: onEachFeature,
-
-    pointToLayer: function (feature, latlng) {
-        return L.circleMarker(latlng, {
-            radius: 8,
-            fillColor: "#ff7800",
-            color: "#000",
-            weight: 1,
-            opacity: 1,
-            fillOpacity: 0.8
-        });
+var LeafIcon = L.Icon.extend({
+    options: {
+        shadowUrl: 'assets/icon/marker-icon-green.png',
+        iconAnchor: [12, 40]
     }
-}).addTo(map);
+});
+
+var LeafIcon = L.Icon.extend({
+    options: {
+        shadowUrl: 'assets/icon/marker-icon-green.png',
+        iconAnchor: [12, 40]
+    }
+});
+
+var destIcon = new LeafIcon({iconUrl: 'leaf-orange.png'});
+var startIcon = new LeafIcon({iconUrl: 'leaf-orange.png'});
+
+
+L.marker([50.051200811895846, 8.571664094924927], {icon: destIcon}).addTo(map);
+L.marker([50.11760453566317, 8.68775010108947], {icon: startIcon}).addTo(map);
 
 $(document).ready(function () {
     console.log('whatever');
