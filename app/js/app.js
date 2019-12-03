@@ -7,6 +7,7 @@ var TRANSPORT_TYPE = {
 
 var map = L.map('map').setView([50.08, 8.64], 11);
 
+$("#table").hide();
 
 var trainLine = [{
     "type": "FeatureCollection",
@@ -343,40 +344,6 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     }
 ).addTo(map);
 
-
-var destPoint = {
-    "type": "FeatureCollection",
-    "features": [
-        {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    8.571664094924927,
-                    50.051200811895846
-                ]
-            }
-        }
-    ]
-};
-
-var startPoint = {
-    "type": "FeatureCollection",
-    "features": [
-        {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    8.687750101089478,
-                    50.11760453566317]
-            }
-        }
-    ]
-};
-
 var LeafIcon = L.Icon.extend({
     options: {
         shadowUrl: 'assets/icon/marker-icon-green.png',
@@ -396,16 +363,9 @@ var startIcon = new LeafIcon({iconUrl: 'leaf-orange.png'});
 
 
 L.marker([50.051200811895846, 8.571664094924927], {icon: destIcon}).addTo(map);
-L.marker([50.11760453566317, 8.68775010108947], {icon: startIcon}).addTo(map);
 
 $(document).ready(function () {
     console.log('whatever');
-});
-
-$("#test-btn").click(function () {
-    console.info("test btn click");
-
-    map.removeLayer(carLineFeatureLayer);
 });
 
 //show or hide table row details
@@ -423,6 +383,13 @@ $(".table-row").click(function () {
         hideDetails.call(this);
         hideAllLayer();
     }
+});
+
+
+$("#start-point-input").on("focusout", function () {
+    console.info("focusout");
+    $("#table").slideDown('slow');
+    L.marker([50.11760453566317, 8.68775010108947], {icon: startIcon}).addTo(map);
 });
 
 function hideAllLayer() {
