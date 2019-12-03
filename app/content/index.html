@@ -1,16 +1,62 @@
 <div id="main-container">
     <div>
-        <form>
-            <!--        Start point<br>-->
-            <input id="start-point-input" type="text" name="startpoint" placeholder="startpoint">
-            <br>
-            <!--        End point<br>-->
-            <input id="end-point-input" type="text" name="endpoint" placeholder="endpoint">
-            <br><br>
-            <input type="submit" value="Submit">
-        </form>
+        <fieldset>
+            <legend>Your ride</legend>
+            <form>
+                <!--        Start point<br>-->
+                <input id="start-point-input" type="text" name="startpoint" placeholder="start point">
+                <br>
+                <!--        End point<br>-->
+                <input id="end-point-input" type="text" name="endpoint" placeholder="airport">
+                <!--                <br><br>-->
+                <!--                <input type="submit" value="Submit">-->
+            </form>
+        </fieldset>
     </div>
+    <div>
+        <fieldset>
+            <legend>Trip Info</legend>
+            <form>
+                <div id="arrival-time">
+                    <div>
+                        <label for="arrival-time-input">Arrival time</label>
+                    </div>
+                    <div>
+                        <button id="minus-button">-</button>
+                        <input id="arrival-time-input" type="text" name="arrival-time-input" placeholder="12:00">
+                        <button id="plus-button">+</button>
+                    </div>
+                </div>
+                <div id="checkin-time">
+                    <div>
+                        <label for="checkin-time-input">Checkin close time</label>
+                    </div>
+                    <div>
+                        <span id="checkin-time-input">12:00</span>
+                    </div>
+                </div>
+                <div id="boarding-time">
+                    <div>
+                        <label for="boarding-time-input">Boarding time</label>
+                    </div>
+                    <div>
+                        <span id="boarding-time-input">12:00</span>
+                    </div>
+                </div>
+                <div id="departure-time">
+                    <div>
+                        <label for="departure-time-input">Departure time</label>
+                    </div>
+                    <div>
+                        <span id="departure-time-input">12:00</span>
+                    </div>
+                </div>
+            </form>
+        </fieldset>
+    </div>
+    <div>
 
+    </div>
     <div id='map'></div>
 
     <div id="table">
