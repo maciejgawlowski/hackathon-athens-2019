@@ -2,8 +2,17 @@
 
 
 body {
+  margin: 0;
   background: $darkBlue;
   color: #fff;
+}
+
+#banner {
+  width: 100%;
+}
+
+#main-container{
+  margin: 5px;
 }
 
 .mapbox {
@@ -97,6 +106,9 @@ body {
       .table-row-details-5 {
         display: inline-grid;
         grid-template-columns: 80% 20%;
+      }
+
+      .table-row-details-6 {
       }
 
       .table-details-cell {
