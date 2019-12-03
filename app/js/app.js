@@ -9,6 +9,7 @@ var map = L.map('map').setView([50.08, 8.64], 11);
 
 $("#table").hide();
 $("#info-form").hide();
+$("#info-form-2").hide();
 
 var trainLine = [{
     "type": "FeatureCollection",
@@ -391,6 +392,7 @@ $("#start-point-input").on("focusout", function () {
     console.info("focusout");
     $("#table").slideDown('slow');
     $("#info-form").slideDown('slow');
+    $("#info-form-2").slideDown('slow');
     L.marker([50.11760453566317, 8.68775010108947], {icon: startIcon}).addTo(map);
 });
 
@@ -443,6 +445,7 @@ $(function () {
         "Frankfurt Saalgasse",
         "Frankfurt Schaumainkai",
         "Frankfurt Zeil",
+        "Garittou 33",
         "Vilbele Strasse 2"
     ];
 
