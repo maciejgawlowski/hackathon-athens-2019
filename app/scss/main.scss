@@ -19,7 +19,18 @@ h3 {
 }
 
 #main-container {
-  margin: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 375px;
+  //height: 667px;
+  border: solid 1px black;
+  border-top-width: 40px;
+  border-bottom-width: 40px;
+  border-left-width: 7px;
+  border-right-width: 7px;
+  border-radius: 15px;
 }
 
 .table-cell-icon {
