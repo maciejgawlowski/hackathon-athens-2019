@@ -9,7 +9,6 @@ var map = L.map('map').setView([50.08, 8.64], 11);
 
 $("#table").hide();
 $("#info-form").hide();
-$("#info-form-2").hide();
 
 var trainLine = [{
     "type": "FeatureCollection",
